@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     affirmationBtn.textContent       = 'Fetching...';
 
     try {
-      const response = await fetch('https://api.quotable.io/random?tags=inspirational');
+      const response = await fetch('https://zenquotes.io/api/random');
       const data     = await response.json();
       affirmationLoading.style.display = 'none';
-      affirmationText.textContent      = '\u201C' + data.content + '\u201D \u2014 ' + data.author;
+      affirmationText.textContent      = '\u201C' + data[0].q + '\u201D \u2014 ' + data[0].a;
       affirmationBox.style.display     = 'block';
     } catch (error) {
       affirmationLoading.style.display = 'none';
