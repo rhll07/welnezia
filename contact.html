@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welnezia | Contact Us</title>
+  <meta name="description" content="Welnezia – Contact Us. Health, fitness and mental wellness.">
+  <meta name="keywords" content="health, fitness, diet, wellness, workout, nutrition">
+  <meta property="og:title" content="Welnezia | Contact Us">
+  <meta property="og:image" content="https://picsum.photos/seed/welnezia/1200/630">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Welnezia</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="mental-wellness.html">Wellness</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-controls">
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <button id="hamburger" aria-label="Open menu"></button>
+    </div>
+  </header>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="workouts.html">Workouts</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="mental-wellness.html">Wellness</a>
+    <a href="tips.html">Tips</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <main>
+
+    <h1 style="text-align:center;">Contact Us</h1>
+    <p style="text-align:center; color:var(--text-muted); margin-bottom:2.5rem;">Have a question or want to share your journey? We'd love to hear from you!</p>
+
+    <form id="contactForm" novalidate>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="e.g. Rahul Krishna" pattern="[A-Za-z ]+">
+        <span class="error-msg" id="nameErr"></span>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+        <span class="error-msg" id="emailErr"></span>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="10" max="100" placeholder="e.g. 21">
+      </fieldset>
+
+      <fieldset>
+        <legend>Fitness Profile</legend>
+        <label for="goal">Primary Goal</label>
+        <input type="text" id="goal" name="goal" list="goalList" placeholder="Select or type goal...">
+        <datalist id="goalList">
+          <option value="Weight Loss">
+          <option value="Muscle Gain">
+          <option value="Endurance">
+          <option value="Flexibility">
+          <option value="Stress Relief">
+        </datalist>
+
+        <label for="level">Fitness Level</label>
+        <select id="level" name="level">
+          <option value="">-- Select Level --</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+
+        <label>Preferred Workout</label>
+        <div style="display:flex; gap:1.5rem; margin-top:0.5rem; flex-wrap:wrap;">
+          <label style="font-weight:400; margin:0;"><input type="radio" name="workout" value="cardio"> Cardio</label>
+          <label style="font-weight:400; margin:0;"><input type="radio" name="workout" value="strength"> Strength</label>
+          <label style="font-weight:400; margin:0;"><input type="radio" name="workout" value="yoga"> Yoga</label>
+        </div>
+
+        <label for="message" style="margin-top:1rem;">Your Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us about yourself or ask a question..."></textarea>
+
+        <label style="display:flex; align-items:center; gap:0.5rem; margin-top:1rem; font-weight:400; cursor:pointer;">
+          <input type="checkbox" required> I agree to the privacy policy *
+        </label>
+      </fieldset>
+
+      <button type="submit" class="btn" style="width:100%; font-size:1rem;">Send Message 🌿</button>
+    </form>
+
+    <section style="text-align:center; margin:3rem 0 1rem;">
+      <h3>Connect With Us</h3>
+      <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:1rem;">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="https://cdn.simpleicons.org/instagram/2d7a4f" width="32" height="32" alt="Instagram" loading="lazy">
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="https://cdn.simpleicons.org/github/2d7a4f" width="32" height="32" alt="GitHub" loading="lazy">
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+          <img src="https://cdn.simpleicons.org/x/2d7a4f" width="32" height="32" alt="Twitter X" loading="lazy">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="https://cdn.simpleicons.org/youtube/2d7a4f" width="32" height="32" alt="YouTube" loading="lazy">
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

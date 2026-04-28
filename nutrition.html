@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welnezia | Nutrition & Diet</title>
+  <meta name="description" content="Welnezia – Nutrition and Diet guidance. Healthy meal plans and a calorie calculator.">
+  <meta name="keywords" content="nutrition, diet, healthy food, calories, meal plan, fitness">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .nutrition-grid { grid-template-columns: 1fr; }
+    }
+    .meal-card .card-body ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .meal-card .card-body ul li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .calc-section {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 3rem auto;
+      box-shadow: var(--shadow);
+    }
+    .calc-section h2 { text-align: center; margin-bottom: 0.5rem; }
+    .calc-section .subtitle { text-align: center; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
+    .calc-grid label { font-weight: 600; display: block; margin-bottom: 0.3rem; font-size: 0.9rem; }
+    .calc-grid input, .calc-grid select {
+      width: 100%; padding: 0.65rem 1rem;
+      border: 1px solid rgba(45,122,79,0.3); border-radius: 6px;
+      background: rgba(255,255,255,0.25); color: var(--text); font-family: var(--font-body);
+    }
+    [data-theme="dark"] .calc-grid input,
+    [data-theme="dark"] .calc-grid select { background: rgba(20,50,30,0.4); }
+    .gender-row { display: flex; gap: 2rem; align-items: center; }
+    .gender-row label { font-weight: 400; margin: 0; cursor: pointer; }
+    #calcBtn { width: 100%; margin-top: 1.25rem; }
+    #calcResult {
+      margin-top: 1.5rem; display: none;
+      background: rgba(45,122,79,0.08);
+      border: 1px solid rgba(45,122,79,0.2);
+      border-radius: 10px; padding: 1.25rem;
+    }
+    #calcResult h3 { color: var(--primary); font-family: var(--font-display); margin-bottom: 0.75rem; }
+    .macro-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .macro-box {
+      flex: 1; min-width: 120px; text-align: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.85rem;
+    }
+    .macro-box span { display: block; font-size: 1.4rem; font-weight: 700; color: var(--primary); font-family: var(--font-display); }
+    .macro-box p { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Welnezia</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="nutrition.html" class="active">Nutrition</a></li>
+        <li><a href="mental-wellness.html">Wellness</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-controls">
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <button id="hamburger" aria-label="Open menu"></button>
+    </div>
+  </header>
+
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="workouts.html">Workouts</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="mental-wellness.html">Wellness</a>
+    <a href="tips.html">Tips</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <h1>Nutrition &amp; Diet</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">Fuel your body right. Here's your daily meal guide organised by time of day.</p>
+
+    <div class="nutrition-grid">
+
+      <div class="card meal-card">
+        <div class="card-heading">🌅 Early Morning &amp; Breakfast</div>
+        <div class="card-body">
+          <ul>
+            <li>Warm Lemon Water &amp; Almonds</li>
+            <li>Oats with Berries &amp; Chia Seeds</li>
+            <li>Banana Smoothie with Flaxseeds</li>
+            <li>Boiled Eggs &amp; Whole Wheat Toast</li>
+            <li>Greek Yogurt with Honey &amp; Granola</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">🍎 Mid-Morning Snack</div>
+        <div class="card-body">
+          <ul>
+            <li>Greek Yogurt or Fresh Fruit</li>
+            <li>A Handful of Mixed Nuts</li>
+            <li>Apple Slices with Peanut Butter</li>
+            <li>Coconut Water &amp; Dates</li>
+            <li>Carrot &amp; Cucumber Sticks with Hummus</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">🍵 Pre-Lunch</div>
+        <div class="card-body">
+          <ul>
+            <li>Green Tea &amp; Walnuts</li>
+            <li>Sprout Salad with Lemon Dressing</li>
+            <li>Buttermilk (Chaas) or Lassi</li>
+            <li>A Small Bowl of Fruit Salad</li>
+            <li>Roasted Makhana (Fox Nuts)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">🍽️ Lunch</div>
+        <div class="card-body">
+          <ul>
+            <li>Grilled Chicken / Paneer &amp; Quinoa</li>
+            <li>Brown Rice with Dal &amp; Sabzi</li>
+            <li>Roti with Mixed Veg Curry &amp; Curd</li>
+            <li>Tofu Stir Fry with Brown Rice</li>
+            <li>Rajma / Chole with Salad &amp; Roti</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">🌆 Evening Snack</div>
+        <div class="card-body">
+          <ul>
+            <li>Roasted Chana or Sprouts</li>
+            <li>Banana or Peanut Butter Toast</li>
+            <li>Sweet Potato Chaat</li>
+            <li>Makhana &amp; Green Tea</li>
+            <li>Protein Bar or Energy Balls</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">💪 Dinner</div>
+        <div class="card-body">
+          <ul>
+            <li>Baked Fish / Dal &amp; Steamed Veggies</li>
+            <li>Grilled Chicken Salad with Olive Oil</li>
+            <li>Vegetable Soup with Whole Grain Bread</li>
+            <li>Paneer Bhurji with 2 Rotis</li>
+            <li>Egg White Omelette with Sautéed Veggies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card meal-card">
+        <div class="card-heading">🌙 Bedtime</div>
+        <div class="card-body">
+          <ul>
+            <li>Turmeric Milk (Haldi Doodh)</li>
+            <li>A Small Handful of Almonds</li>
+            <li>Chamomile Tea</li>
+            <li>Light Banana &amp; Warm Milk</li>
+            <li>Cottage Cheese (Paneer) — slow protein</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Calorie Calculator -->
+    <div class="calc-section">
+      <h2>🧮 Daily Calorie Calculator</h2>
+      <p class="subtitle">Based on the Mifflin-St Jeor formula — the most accurate BMR calculator.</p>
+      <div class="calc-grid">
+        <div>
+          <label for="calcAge">Age (years)</label>
+          <input type="number" id="calcAge" min="10" max="100" placeholder="e.g. 21">
+        </div>
+        <div>
+          <label for="calcWeight">Weight (kg)</label>
+          <input type="number" id="calcWeight" min="20" max="300" placeholder="e.g. 70">
+        </div>
+        <div>
+          <label for="calcHeight">Height (cm)</label>
+          <input type="number" id="calcHeight" min="100" max="250" placeholder="e.g. 175">
+        </div>
+        <div>
+          <label for="calcActivity">Activity Level</label>
+          <select id="calcActivity">
+            <option value="1.2">Sedentary (desk job, no exercise)</option>
+            <option value="1.375">Lightly Active (1–3 days/week)</option>
+            <option value="1.55" selected>Moderately Active (3–5 days/week)</option>
+            <option value="1.725">Very Active (6–7 days/week)</option>
+            <option value="1.9">Extra Active (athlete / physical job)</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:1rem;">
+        <label style="font-weight:600; display:block; margin-bottom:0.5rem;">Gender</label>
+        <div class="gender-row">
+          <label><input type="radio" name="calcGender" value="male" checked> Male</label>
+          <label><input type="radio" name="calcGender" value="female"> Female</label>
+        </div>
+      </div>
+      <button class="btn" id="calcBtn">Calculate My Daily Calories</button>
+      <div id="calcResult">
+        <h3>Your Results</h3>
+        <p>Daily Calorie Need: <strong id="tdeeVal" style="color:var(--primary); font-size:1.3rem;"></strong></p>
+        <div class="macro-row">
+          <div class="macro-box"><span id="proteinVal"></span><p>Protein (g)</p></div>
+          <div class="macro-box"><span id="carbsVal"></span><p>Carbs (g)</p></div>
+          <div class="macro-box"><span id="fatVal"></span><p>Fats (g)</p></div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.82rem; color:var(--text-muted);">* Macros based on 30% protein, 45% carbs, 25% fat split.</p>
+      </div>
+    </div>
+
+    <!-- Macronutrient Table -->
+    <section style="margin:3rem 0 1rem;">
+      <h2>Essential Nutrients Reference</h2>
+      <table>
+        <caption>Daily Macronutrient Guide</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nutrient</th>
+            <th scope="col">Daily Goal</th>
+            <th scope="col">Best Sources</th>
+            <th scope="col">Primary Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Protein</td><td>0.8–1.6g per kg</td><td>Eggs, Fish, Legumes, Paneer</td><td>Muscle Repair &amp; Growth</td></tr>
+          <tr><td>Carbohydrates</td><td>45–65% of calories</td><td>Rice, Oats, Fruits, Roti</td><td>Energy &amp; Brain Function</td></tr>
+          <tr><td>Healthy Fats</td><td>20–35% of calories</td><td>Nuts, Avocado, Olive Oil</td><td>Hormones &amp; Joint Health</td></tr>
+          <tr><td>Fibre</td><td>25–35g per day</td><td>Vegetables, Legumes, Seeds</td><td>Digestion &amp; Gut Health</td></tr>
+          <tr><td>Water</td><td>2.5–3 litres/day</td><td>Water, Coconut Water, Fruits</td><td>Hydration &amp; Detox</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="4">Consult a certified nutritionist for a personalised dietary plan.</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

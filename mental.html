@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welnezia | Mental Wellness</title>
+  <meta name="description" content="Welnezia – Mental Wellness. Stress management, meditation, sleep habits and mindfulness tips.">
+  <meta name="keywords" content="mental health, meditation, stress management, sleep, mindfulness, wellness">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .wellness-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .wellness-grid { grid-template-columns: 1fr; }
+    }
+    .wellness-card .card-body ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .wellness-card .card-body ul li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Affirmation Widget */
+    .affirmation-section {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 3rem auto;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .affirmation-section h2 {
+      margin-bottom: 0.5rem;
+    }
+    .affirmation-section .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    #affirmationBtn { min-width: 220px; }
+    #affirmationBox {
+      display: none;
+      margin-top: 1.5rem;
+      background: rgba(45,122,79,0.08);
+      border: 1px solid rgba(45,122,79,0.2);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    #affirmationText {
+      font-size: 1.15rem;
+      font-family: var(--font-display);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+    #affirmationLoading {
+      display: none;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    #affirmationError {
+      display: none;
+      color: var(--error, #c0392b);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Welnezia</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="mental-wellness.html" class="active">Wellness</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-controls">
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <button id="hamburger" aria-label="Open menu"></button>
+    </div>
+  </header>
+
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="workouts.html">Workouts</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="mental-wellness.html">Wellness</a>
+    <a href="tips.html">Tips</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <h1>Mental Wellness</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">Your mind matters just as much as your body. Explore techniques to reduce stress, sleep better, and live mindfully.</p>
+
+    <div class="wellness-grid">
+
+      <div class="card wellness-card">
+        <div class="card-heading">🧘 Meditation Techniques</div>
+        <div class="card-body">
+          <ul>
+            <li>Box Breathing — inhale 4s, hold 4s, exhale 4s</li>
+            <li>Body Scan — focus attention from head to toe</li>
+            <li>Guided Visualisation — imagine a calm, safe place</li>
+            <li>Mantra Meditation — silently repeat a calming word</li>
+            <li>5-Minute Morning Sit — just observe your breath</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card wellness-card">
+        <div class="card-heading">😴 Sleep Habits</div>
+        <div class="card-body">
+          <ul>
+            <li>Maintain a consistent sleep &amp; wake time daily</li>
+            <li>Avoid screens at least 30 minutes before bed</li>
+            <li>Keep your bedroom cool, dark, and quiet</li>
+            <li>Avoid caffeine after 3 PM</li>
+            <li>Try a short bedtime journaling routine</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card wellness-card">
+        <div class="card-heading">🌬️ Stress Management</div>
+        <div class="card-body">
+          <ul>
+            <li>Identify your stress triggers and write them down</li>
+            <li>Take short breaks every 60–90 minutes of work</li>
+            <li>Practice progressive muscle relaxation</li>
+            <li>Limit news &amp; social media consumption</li>
+            <li>Talk to someone you trust when overwhelmed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card wellness-card">
+        <div class="card-heading">☀️ Positive Lifestyle</div>
+        <div class="card-body">
+          <ul>
+            <li>Start each day with one thing you're grateful for</li>
+            <li>Spend at least 20 minutes outdoors daily</li>
+            <li>Set small, achievable goals every morning</li>
+            <li>Celebrate progress, not just perfection</li>
+            <li>Surround yourself with supportive people</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card wellness-card">
+        <div class="card-heading">🏃 Exercise &amp; Mental Health</div>
+        <div class="card-body">
+          <ul>
+            <li>30 min of walking reduces anxiety significantly</li>
+            <li>Yoga combines movement with mindful breathing</li>
+            <li>Exercise releases endorphins — natural mood lifters</li>
+            <li>Team sports build social connection &amp; confidence</li>
+            <li>Even stretching for 10 min improves your mood</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card wellness-card">
+        <div class="card-heading">🍃 Mindfulness Practices</div>
+        <div class="card-body">
+          <ul>
+            <li>Eat one meal a day without screens — mindful eating</li>
+            <li>Do a 5-4-3-2-1 grounding exercise when anxious</li>
+            <li>Take 3 deep breaths before responding in conflict</li>
+            <li>Notice 3 beautiful things on your way to class</li>
+            <li>End the day by writing down one win, however small</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Daily Affirmation Widget -->
+    <div class="affirmation-section">
+      <h2>🌟 Daily Affirmation</h2>
+      <p class="subtitle">Need a little boost? Fetch a fresh positive affirmation just for you.</p>
+      <button class="btn" id="affirmationBtn">✨ Get My Affirmation</button>
+      <p id="affirmationLoading">⏳ Fetching your affirmation...</p>
+      <p id="affirmationError"></p>
+      <div id="affirmationBox">
+        <p id="affirmationText"></p>
+      </div>
+    </div>
+
+    <!-- Mental Wellness Tips Table -->
+    <section style="margin:3rem 0 1rem;">
+      <h2>Quick Wellness Reference</h2>
+      <table>
+        <caption>Mental Wellness at a Glance</caption>
+        <thead>
+          <tr>
+            <th scope="col">Area</th>
+            <th scope="col">Daily Goal</th>
+            <th scope="col">Simple Practice</th>
+            <th scope="col">Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Meditation</td><td>5–10 minutes</td><td>Morning breathing exercise</td><td>Reduces anxiety &amp; improves focus</td></tr>
+          <tr><td>Sleep</td><td>7–9 hours</td><td>Consistent bedtime routine</td><td>Improves memory &amp; mood</td></tr>
+          <tr><td>Physical Activity</td><td>30 minutes</td><td>Walk, yoga or stretching</td><td>Boosts endorphins naturally</td></tr>
+          <tr><td>Social Connection</td><td>1 meaningful chat</td><td>Call a friend or family member</td><td>Reduces loneliness &amp; stress</td></tr>
+          <tr><td>Digital Detox</td><td>1 hour screen-free</td><td>No phone during meals</td><td>Improves presence &amp; focus</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="4">Small consistent steps matter more than occasional big efforts.</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>
