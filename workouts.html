@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welnezia | Workout Plans</title>
-  <meta name="description" content="Welnezia – Workout Plans. Health, fitness and mental wellness.">
-  <meta name="keywords" content="health, fitness, diet, wellness, workout, nutrition">
-  <meta property="og:title" content="Welnezia | Workout Plans">
-  <meta property="og:image" content="https://picsum.photos/seed/welnezia/1200/630">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workouts | Welnezia</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ── Navbar ── -->
   <header>
-    <a href="index.html" class="logo">Welnezia</a>
+    <a class="logo" href="index.html">Welnezia</a>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -32,7 +27,9 @@
       <button id="hamburger" aria-label="Open menu"></button>
     </div>
   </header>
-  <div id="mobile-menu">
+
+  <!-- ── Mobile Menu ── -->
+  <nav id="mobile-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="workouts.html" class="active">Workouts</a>
@@ -40,48 +37,203 @@
     <a href="mental.html">Wellness</a>
     <a href="blogs.html">Tips</a>
     <a href="contact.html">Contact</a>
-  </div>
+  </nav>
+
   <main>
 
-    <h1>Workout Plans</h1>
-    <p style="color:var(--text-muted); margin-bottom:2rem;">Choose a plan that matches your goal. Consistency is the real secret.</p>
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <h1>&#128170; Workout Plans</h1>
+      <p>Choose a plan that matches your goal. Consistency is the real secret to lasting results.</p>
+    </section>
 
-    <table>
-      <caption>7-Day Beginner Workout Schedule</caption>
-      <thead>
-        <tr><th scope="col">Day</th><th scope="col">Focus Area</th><th scope="col">Exercises</th><th scope="col">Duration</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Monday</td><td>Full Body HIIT</td><td>Jumping Jacks, Burpees, Mountain Climbers</td><td>30 mins</td></tr>
-        <tr><td>Tuesday</td><td>Active Recovery</td><td>Yoga Flow, Light Stretching</td><td>20 mins</td></tr>
-        <tr><td colspan="4" style="text-align:center; font-weight:700; color:var(--primary); font-family:var(--font-display)">Wednesday — Rest Day 🌿</td></tr>
-        <tr><td>Thursday</td><td>Upper Body</td><td>Push-ups, Dumbbell Rows, Shoulder Press</td><td>40 mins</td></tr>
-        <tr><td>Friday</td><td>Lower Body</td><td>Squats, Lunges, Glute Bridges</td><td>40 mins</td></tr>
-        <tr><td>Saturday</td><td>Cardio</td><td>30-min Jog or Cycling</td><td>30 mins</td></tr>
-        <tr><td>Sunday</td><td>Rest &amp; Recover</td><td>Foam Rolling, Light Walk</td><td>15 mins</td></tr>
-      </tbody>
-      <tfoot><tr><td colspan="4">⚠️ Always warm up 5 mins before any session and cool down after.</td></tr></tfoot>
-    </table>
-
-    <div class="media-wrapper">
-      <video controls poster="https://picsum.photos/seed/workout/800/400" style="width:100%; max-width:700px;">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Your browser does not support the video element.
-      </video>
-    </div>
-
-    <section style="margin:2rem 0;">
-      <h2>Workout Categories</h2>
+    <!-- ── Exercise Cards ── -->
+    <section>
+      <h2>Today's Exercise List</h2>
       <div class="grid-container">
-        <div class="card"><div class="card-heading">🔥 HIIT</div><div class="card-body"><p>High-intensity interval training burns fat fast. Great for busy schedules.</p></div></div>
-        <div class="card"><div class="card-heading">🏋️ Strength</div><div class="card-body"><p>Build lean muscle and increase metabolism with progressive overload training.</p></div></div>
-        <div class="card"><div class="card-heading">🧘 Flexibility</div><div class="card-body"><p>Yoga and stretching routines to improve mobility and reduce injury risk.</p></div></div>
+
+        <div class="card">
+          <div class="card-heading">&#128694; Brisk Walking</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 30 Mins</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Low</span></p>
+            <p><strong>Goal:</strong> Cardio</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#129354; Push-Ups</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 3 Sets x 12</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Med</span></p>
+            <p><strong>Goal:</strong> Upper Body</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#11015; Squats</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 4 Sets x 15</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Med</span></p>
+            <p><strong>Goal:</strong> Legs</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#9203; Plank</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 60 Seconds</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Med</span></p>
+            <p><strong>Goal:</strong> Core</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#127939; Lunges</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 12 Reps</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Med</span></p>
+            <p><strong>Goal:</strong> Balance</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#128293; Burpees</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 10 Reps</p>
+            <p><strong>Intensity:</strong> <span style="color:#e67e22">High</span></p>
+            <p><strong>Goal:</strong> Full Body</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#9968; Mt. Climbers</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 45 Secs</p>
+            <p><strong>Intensity:</strong> <span style="color:#e67e22">High</span></p>
+            <p><strong>Goal:</strong> Fat Burn</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#127947; Deadlifts</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 5 Sets x 5</p>
+            <p><strong>Intensity:</strong> <span style="color:#e74c3c">Extreme</span></p>
+            <p><strong>Goal:</strong> Strength</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#128692; Cycling</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 20 Mins</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Med</span></p>
+            <p><strong>Goal:</strong> Endurance</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#129496; Yoga Flow</div>
+          <div class="card-body">
+            <p><strong>Duration:</strong> 15 Mins</p>
+            <p><strong>Intensity:</strong> <span style="color:var(--primary)">Low</span></p>
+            <p><strong>Goal:</strong> Recovery</p>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- ── Weekly Plan Table ── -->
+    <section>
+      <h2>Weekly Workout Schedule</h2>
+      <table>
+        <caption>7-Day Training Plan</caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Focus Area</th>
+            <th>Exercises</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>Full Body HIIT</td><td>Jumping Jacks, Burpees, Mountain Climbers</td><td>30 mins</td></tr>
+          <tr><td>Tuesday</td><td>Active Recovery</td><td>Yoga Flow, Light Stretching</td><td>20 mins</td></tr>
+          <tr><td>Wednesday</td><td colspan="3">&#127807; Rest Day</td></tr>
+          <tr><td>Thursday</td><td>Upper Body</td><td>Push-ups, Dumbbell Rows, Shoulder Press</td><td>40 mins</td></tr>
+          <tr><td>Friday</td><td>Lower Body</td><td>Squats, Lunges, Glute Bridges</td><td>40 mins</td></tr>
+          <tr><td>Saturday</td><td>Cardio</td><td>30-min Jog or Cycling</td><td>30 mins</td></tr>
+          <tr><td>Sunday</td><td>Rest &amp; Recover</td><td>Foam Rolling, Light Walk</td><td>15 mins</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="4">&#9888; Always warm up 5 mins before any session and cool down after.</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- ── Workout Categories ── -->
+    <section>
+      <h2>Workout Categories</h2>
+      <div class="grid-container">
+
+        <div class="card">
+          <div class="card-heading">&#128293; HIIT</div>
+          <div class="card-body">
+            <p>High-intensity interval training burns fat fast. Great for busy schedules with short, explosive sessions.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#127947; Strength</div>
+          <div class="card-body">
+            <p>Build lean muscle and increase metabolism with progressive overload and compound movements.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">&#129496; Flexibility</div>
+          <div class="card-body">
+            <p>Yoga and stretching routines to improve mobility, posture, and reduce injury risk over time.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Tips Accordion ── -->
+    <section>
+      <h2>Training Tips</h2>
+
+      <details>
+        <summary>How many days should I train per week?</summary>
+        <p>Beginners should aim for 3&ndash;4 days per week. Advanced athletes can train 5&ndash;6 days with proper recovery built in.</p>
+      </details>
+
+      <details>
+        <summary>Should I do cardio before or after weights?</summary>
+        <p>For fat loss, do cardio after weights. For endurance goals, cardio first is fine. Either way, warm up before both.</p>
+      </details>
+
+      <details>
+        <summary>How long should a workout session be?</summary>
+        <p>45&ndash;60 minutes is ideal for most people. Quality over quantity &mdash; short focused sessions beat long unfocused ones.</p>
+      </details>
+
+      <details>
+        <summary>Is rest important?</summary>
+        <p>Absolutely. Muscles grow during rest, not during training. At least 1&ndash;2 rest or active recovery days per week is essential.</p>
+      </details>
+
+    </section>
+
   </main>
+
   <footer>
-    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+    <p>&copy; 2026 Welnezia &mdash; Built for a healthier you.</p>
   </footer>
-  <script src="js/script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
