@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     affirmationBtn.textContent       = 'Fetching...';
 
     try {
-      const response = await fetch('https://api.quotable.io/random?tags=inspirational');
+      const response = await fetch('https://www.affirmations.dev/');
       const data     = await response.json();
-      affirmationText.textContent = '\u201C' + data.content + '\u201D \u2014 ' + data.author;
+      affirmationText.textContent = '\u201C' + data.affirmation + '\u201D';
       affirmationBox.style.display     = 'block';
     } catch (error) {
       affirmationLoading.style.display = 'none';
