@@ -433,11 +433,6 @@ footer {
   width: 100%;
 }
 
-/* ::after on footer for a decorative touch */
-footer p::after {
-  content: ' 🌿';
-}
-
 
 /* ════════════════════════════════════════
    SELECTORS, PSEUDO-CLASSES & PSEUDO-ELEMENTS
